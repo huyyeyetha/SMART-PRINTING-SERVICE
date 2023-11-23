@@ -1,4 +1,5 @@
 <?php
+$page = "history";
 include(__DIR__ . "/../header.php");
 ?>
 

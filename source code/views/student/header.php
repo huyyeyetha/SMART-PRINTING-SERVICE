@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'student')) {
+    session_write_close();
+    header("Location: index.php?page=authorize&controller=login&action=index");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
@@ -13,49 +20,62 @@
 
 <body class="h-100">
     <div class="container-fluid h-100 p-0">
-        <div class="row border-bottom fixed-top" style="height: 75px;line-height:75px">
-            <div class="col-auto">
-                <div class="ms-3 px-3 border fw-bold" style="line-height: 55px; margin-top:10px;">...</div>
-            </div>
+        <div class="row border-bottom border-black fixed-top bg-white" style="height: 75px;line-height:75px">
             <div class="col">
-                <div class="container-fluid bgc-dblue m-0 fs-3">Smart Print Service for Students</div>
+                <div class="container-fluid m-0 fs-3">Smart Print Service for Students</div>
+            </div>
+
+            <div class="col-auto px-5 border-start hover-bg-gray hover-mouse border-black">
+                <a class="text-decoration-none text-black" href="index.php?page=authorize&controller=login&action=index">
+                    <?php
+                    if (isset($_SESSION['user'])) echo "Logout";
+                    else echo "Login";
+                    ?>
+                </a>
             </div>
         </div>
 
         <div class="row h-100" style="padding-top: 75px;">
-            <div class="col-lg-2 p-0 border">
+            <div class="col-lg-2 p-0 border-end border-black fixed h-100">
                 <div>
-                    <div class="ps-4">
+                    <div class=" ps-4">
                         <div class="py-3">
-                            <a href="index.php?page=student&controller=layouts&action=index" class="text-decoration-none text-black fs-6
+                            <a href="index.php?page=student&controller=layouts&action=index" class="hover-bold text-decoration-none text-black fs-6
                             <?php
                             if ($page == "layouts") echo ' fs-4'
                             ?>
                             ">Trang chủ</a>
                         </div>
                         <div class="py-3">
-                            <a href="index.php?page=student&controller=history&action=index" class="text-decoration-none text-black fs-6
+                            <a href="index.php?page=student&controller=print&action=index" class="hover-bold text-decoration-none text-black fs-6
+                            <?php
+                            if ($page == "print") echo ' fs-4'
+                            ?>
+                            ">In tài liệu</a>
+                        </div>
+                        <div class="py-3">
+                            <a href="index.php?page=student&controller=history&action=index" class="hover-bold text-decoration-none text-black fs-6
                             <?php
                             if ($page == "history") echo ' fs-4'
                             ?>
                             ">Lịch sử</a>
                         </div>
                         <div class="py-3">
-                            <a href="index.php?page=student&controller=storage&action=index" class="text-decoration-none text-black fs-6
+                            <a href="index.php?page=student&controller=storage&action=index" class="hover-bold text-decoration-none text-black fs-6
                             <?php
                             if ($page == "storage") echo ' fs-4'
                             ?>
                             ">Kho tài liệu</a>
                         </div>
                         <div class="py-3">
-                            <a href="index.php?page=student&controller=account&action=index" class="text-decoration-none text-black fs-6
+                            <a href="index.php?page=student&controller=account&action=index" class="hover-bold text-decoration-none text-black fs-6
                             <?php
                             if ($page == "account") echo ' fs-4'
                             ?>
                             ">Tài khoản</a>
                         </div>
                         <div class="py-3">
-                            <a href="index.php?page=student&controller=buy_paper&action=index" class="text-decoration-none text-black fs-6
+                            <a href="index.php?page=student&controller=buy_paper&action=index" class="hover-bold text-decoration-none text-black fs-6
                             <?php
                             if ($page == "buy_paper") echo ' fs-4'
                             ?>
@@ -64,4 +84,5 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-2"></div>
             <div class="col-lg-10">

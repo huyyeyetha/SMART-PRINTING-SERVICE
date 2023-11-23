@@ -1,6 +1,10 @@
 .fixed{position: fixed}
+
 .bgc-dblue{background-color: #30A2FF}
 .bgc-lblue{background-color: #00C4FF}
 .bgc-dyellow{background-color: #FFE7A0}
 .bgc-lyellow{background-color: #FFF5B8}
-.fs-4-h:hover{font-size: 1.5rem}
+
+.hover-bold:hover{font-weight: bold}
+.hover-mouse:hover{cursor: pointer}
+.hover-bg-gray:hover{background-color: rgb(230, 230, 230);}

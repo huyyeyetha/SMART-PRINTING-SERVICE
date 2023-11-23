@@ -2,32 +2,20 @@
 $pages = array(
   'error' => ['errors'],
   'main' => ['layouts', 'about', 'services', 'blog', 'archive', 'contact', 'login', 'register', 'edit'],
-  'student' => ['layouts', 'print', 'info', 'history', 'storage', 'share'],
-  'admin' => ['layouts', 'configuration', 'history', 'printer_management', 'login']
+  'student' => ['layouts', 'print', 'buy_paper', 'history', 'storage', 'account'],
+  'admin' => ['layouts', 'configuration', 'history', 'printer_management', 'login'],
+  'authorize' => ['login']
 );
 $controllers = array(
-  //Admin controller
-  'errors' => ['index'],
-  'layouts' => ['index'], // Bổ sung thêm các hàm trong controllers
-  'members' => ['index'],
-  'products' => ['index'],
-  'news' => ['index'],
-  'comments' => ['index'],
-  'admin' => ['index'],
-  'user' => ['index'],
-  'company' => ['index'],
-  'login' => ['index'],
 
-  //Main controller
-  'about' => ['index'],
-  'edit' => ['index'],
-  'blog' => ['index'],
-  'archive' => ['index'],
-  'contact' => ['index'],
-  'blog' => ['index'],
-  'services' => ['index'],
-  'register' => ['index'],
-  //'login' => ['index']
+  'layouts' => ['index'],
+  'login' => ['index'],
+  'print' => ['index'],
+  'storage' => ['index'],
+  'buy_paper' => ['index'],
+  'account' => ['index'],
+  'history' => ['index'],
+
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi

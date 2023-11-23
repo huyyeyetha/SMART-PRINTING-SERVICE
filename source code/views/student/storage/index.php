@@ -1,9 +1,9 @@
 <?php
-$page = "buy_paper";
+$page = "storage";
 include(__DIR__ . "/../header.php");
 ?>
 
-<div>Buy_paper của student</div>
+<div>Storage của student</div>
 
 <?php
 include(__DIR__ . "/../footer.php");
