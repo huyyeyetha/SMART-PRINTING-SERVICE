@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="paperAdder">Paper Adder</option>
                     </select>
                 </label>
-                <button type="submit">Đăng nhập</button>
+                <button class="bg-white border-1" type="submit">Đăng nhập</button>
             </form>
             <hr>
             <div class="row">
