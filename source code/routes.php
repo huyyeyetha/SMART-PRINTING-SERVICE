@@ -3,11 +3,10 @@ $pages = array(
   'error' => ['errors'],
   'main' => ['layouts', 'about', 'services', 'blog', 'archive', 'contact', 'login', 'register', 'edit'],
   'student' => ['layouts', 'print', 'buy_paper', 'history', 'storage', 'account'],
-  'admin' => ['layouts', 'configuration', 'history', 'printer_management', 'login'],
+  'admin' => ['layouts, admin'],
   'authorize' => ['login']
 );
 $controllers = array(
-
   'layouts' => ['index'],
   'login' => ['index'],
   'print' => ['index'],
@@ -15,7 +14,7 @@ $controllers = array(
   'buy_paper' => ['index'],
   'account' => ['index'],
   'history' => ['index'],
-
+  'admin' => ['index'],
 ); // Các controllers trong hệ thống và các action có thể gọi ra từ controller đó.
 
 // Nếu các tham số nhận được từ URL không hợp lệ (không thuộc list controller và action có thể gọi
