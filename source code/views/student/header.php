@@ -84,5 +84,4 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'student')) {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2"></div>
             <div class="col-lg-10">
