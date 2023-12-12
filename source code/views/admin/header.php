@@ -60,6 +60,13 @@ if (!(isset($_SESSION['user']) && $_SESSION['user'] == 'admin')) {
                             ?>
                             ">Điều khiển máy in</a>
                         </div>
+                        <div class="py-3">
+                            <a href="index.php?page=admin&controller=view_student_history&action=index" class="hover-bold text-decoration-none text-black fs-6
+                            <?php
+                            if ($page == "view_student_history") echo ' fs-4 fw-bold'
+                            ?>
+                            ">Xem lịch sử in của sinh viên</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+.background-bk {
+    background-image: url('../../../public/assets/background.png');
+    /* Đường dẫn đến hình ảnh */
+    background-size: cover;
+    /* Hiển thị hình ảnh toàn màn hình */
+    background-position: center;
+    /* Hiển thị hình ảnh ở giữa trung tâm */
+    height: 100vh;
+    /* Chiều cao tương đối với viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Màu chữ trên hình nền */
+    text-align: center;
+    /* Căn giữa nội dung */
+}

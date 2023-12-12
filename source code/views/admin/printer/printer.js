@@ -207,16 +207,27 @@ const downloadFile = function (data, fileType, fileName = '') {
 }
 
 const change_printer_status = () => {
-    let printer_list = document.querySelectorAll('[id^="lbprinter"]');
-    printer_list.forEach(printer => {
-        printer.addEventListener('click', () => {
-            if (printer.innerHTML == "Bật") {
-                printer.innerHTML = "Tắt";
+    let lbprinter_list = document.querySelectorAll('[id^="lbprinter"]');
+    let cbprinter_list = document.querySelectorAll('[id^="cbprinter"]');
+    let number_of_printer = cbprinter_list.length;
+    for (let i = 0; i < number_of_printer; i++) {
+        cbprinter_list[i].addEventListener('click', () => {
+            if (cbprinter_list[i].checked) {
+                lbprinter_list[i].innerHTML = "Bật";
             } else {
-                printer.innerHTML = "Bật";
+                lbprinter_list[i].innerHTML = "Tắt";
             }
         });
-    });
+    }
+    // printer_list.forEach(printer => {
+    //     printer.addEventListener('click', () => {
+    //         if (printer.innerHTML == "Bật") {
+    //             printer.innerHTML = "Tắt";
+    //         } else {
+    //             printer.innerHTML = "Bật";
+    //         }
+    //     });
+    // });
 }
 
 const delete_printer = () => {
@@ -254,7 +265,8 @@ const add_printer = () => {
                 <td><button class="btn btn-danger" id="delete-printer-${printer_id}">Xóa</button></td>
             </tr>
             `;
-    table_body.innerHTML = table_body.innerHTML + htmls;
+    // table_body.innerHTML = table_body.innerHTML + htmls;
+    table_body.insertAdjacentHTML('beforeend', htmls);
     add_printer_form_close();
     delete_printer();
 }

@@ -35,13 +35,15 @@ include(__DIR__ . "/../header.php");
 </style>
 
 <div id="main-config-screen">
-    <select onchange="showDiv(this.value)">
-        <option>Trang chủ</option>
-        <option value="page_size">Kích thước giấy cho phép</option>
-        <option value="default_numpage">Số lượng trang in mặc định</option>
-        <option value="file_allow">Loại tập tin được in</option>
-        <option value="oneside">Số trang trên một mặt</option>
-    </select>
+    <form class="col-6">
+        <select class="form-select" onchange="showDiv(this.value)">
+            <option selected>Chọn loại cấu hình</option>
+            <option value="page_size">Kích thước giấy cho phép</option>
+            <option value="default_numpage">Số lượng trang in mặc định</option>
+            <option value="file_allow">Loại tập tin được in</option>
+            <option value="oneside">Số trang trên một mặt</option>
+        </select>
+    </form>
     <div id="page_size" class="menu-div">
         <h2>Kích thước giấy cho phép</h2>
         <form id="answersForm" action="#" method="post">
@@ -57,7 +59,7 @@ include(__DIR__ . "/../header.php");
             <input type="checkbox" id="A4" name="answers[]" value="A4" checked>
             <label for="A4">A4</label><br>
 
-            <input type="button" value="Xác nhận" onclick="showSizepage()">
+            <input type="button" class="btn btn-primary" value="Xác nhận" onclick="showSizepage()">
         </form>
         <div id="sizeselect"></div>
         <script>
@@ -102,7 +104,7 @@ include(__DIR__ . "/../header.php");
             <input type="checkbox" id="xlsx" name="filetype[]" value=".xlsx">
             <label for="xlsx">.xlsx</label><br>
 
-            <input type="button" value="Xác nhận" onclick="showFiletype()">
+            <input type="button" class="btn btn-primary" value="Xác nhận" onclick="showFiletype()">
         </form>
         <div id="filetype"></div>
         <script>
@@ -132,7 +134,7 @@ include(__DIR__ . "/../header.php");
             <input type="checkbox" id="4" name="numpage[]" value="4">
             <label for="4">4</label><br>
 
-            <input type="button" value="Xác nhận" onclick="shownum()">
+            <input type="button" class="btn btn-primary" value="Xác nhận" onclick="shownum()">
         </form>
         <div id="numpage"></div>
         <script>
